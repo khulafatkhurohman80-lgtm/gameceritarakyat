@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Sastra Nusantara - Jenis Cerita Rakyat Kelas VI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            min-height: 100vh;
+        }
+        .font-heading {
+            font-family: 'Fredoka', cursive;
+        }
+        .bounce-hover:hover {
+            transform: translateY(-4px);
+            transition: all 0.2s ease;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="text-slate-800 pb-12">
+
+    <!-- Header / Navbar -->
+    <header class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/20 p-2.5 rounded-2xl backdrop-blur-sm border border-white/30">
+                    <i class="fa-solid fa-book-open-reader text-2xl text-amber-300"></i>
+                </div>
+                <div>
+                    <h1 class="font-heading text-xl md:text-2xl font-bold tracking-wide">Petualangan Sastra Nusantara</h1>
+                    <p class="text-xs text-emerald-100 font-medium">Bahasa Indonesia Kelas VI • Bab 2 Cerita Rakyat</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-800/40 px-3 py-1.5 rounded-full flex items-center space-x-2 border border-emerald-400/30">
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <span id="global-score" class="font-bold text-amber-300 text-sm md:text-base">0 Poin</span>
+                </div>
+                <button id="sound-btn" onclick="toggleSound()" class="p-2 bg-white/20 hover:bg-white/30 rounded-full transition text-white" title="Suara On/Off">
+                    <i id="sound-icon" class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 mt-6">
+
+        <!-- Navigation Tabs -->
+        <nav class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+            <button onclick="switchTab('materi')" id="tab-materi" class="tab-btn active-tab bg-emerald-600 text-white font-bold px-4 py-2.5 rounded-2xl shadow-md transition flex items-center gap-2 text-sm md:text-base">
+                <i class="fa-solid fa-book"></i> Modul Materi
+            </button>
+            <button onclick="switchTab('kelompokkan')" id="tab-kelompokkan" class="tab-btn bg-white text-slate-700 hover:bg-emerald-50 font-bold px-4 py-2.5 rounded-2xl shadow-sm transition flex items-center gap-2 text-sm md:text-base">
+                <i class="fa-solid fa-layer-group"></i> Kelompokkan Cerita
+            </button>
+            <button onclick="switchTab('detektif')" id="tab-detektif" class="tab-btn bg-white text-slate-700 hover:bg-emerald-50 font-bold px-4 py-2.5 rounded-2xl shadow-sm transition flex items-center gap-2 text-sm md:text-base">
+                <i class="fa-solid fa-magnifying-glass"></i> Detektif Cerita
+            </button>
+            <button onclick="switchTab('memori')" id="tab-memori" class="tab-btn bg-white text-slate-700 hover:bg-emerald-50 font-bold px-4 py-2.5 rounded-2xl shadow-sm transition flex items-center gap-2 text-sm md:text-base">
+                <i class="fa-solid fa-brain"></i> Kartu Memori
+            </button>
+            <button onclick="switchTab('prestasi')" id="tab-prestasi" class="tab-btn bg-white text-slate-700 hover:bg-emerald-50 font-bold px-4 py-2.5 rounded-2xl shadow-sm transition flex items-center gap-2 text-sm md:text-base">
+                <i class="fa-solid fa-trophy text-amber-500"></i> Lencana & Prestasi
+            </button>
+        </nav>
+
+        <!-- SECTION 1: MATERI 7 JENIS CERITA RAKYAT -->
+        <section id="sec-materi" class="tab-content">
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-6 rounded-3xl shadow-lg mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold mb-2">Mengenal 7 Jenis Cerita Rakyat</h2>
+                    <p class="text-amber-100 text-sm md:text-base max-w-2xl">
+                        Cerita rakyat (folklor) adalah cerita yang diwariskan secara turun-temurun. Mari pelajari 7 jenis cerita rakyat berdasarkan isinya sesuai Buku Pelajaran Bahasa Indonesia Kelas VI!
+                    </p>
+                </div>
+                <div class="bg-white/20 p-4 rounded-2xl text-center backdrop-blur-sm border border-white/30 min-w-[140px]">
+                    <span class="block text-3xl font-bold font-heading">7 Jenis</span>
+                    <span class="text-xs uppercase font-semibold text-amber-100">Kategori Utama</span>
+                </div>
+            </div>
+
+            <!-- Grid 7 Jenis Cerita -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="materi-grid">
+                <!-- Javascript will inject cards here -->
+            </div>
+        </section>
+
+        <!-- SECTION 2: TEBAK & KELOMPOKKAN (SORTING GAME) -->
+        <section id="sec-kelompokkan" class="tab-content hidden">
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-slate-100 mb-6">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
+                    <div>
+                        <h2 class="font-heading text-2xl font-bold text-slate-800">Tebak & Kelompokkan Cerita</h2>
+                        <p class="text-slate-500 text-sm">Pilih jenis cerita rakyat yang tepat untuk setiap judul atau ringkasan cerita di bawah ini!</p>
+                    </div>
+                    <div class="bg-emerald-100 text-emerald-800 font-bold px-4 py-2 rounded-xl text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> Progress: <span id="sort-progress">0/10</span>
+                    </div>
+                </div>
+
+                <div id="sort-game-area">
+                    <!-- Current Question Card -->
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-2xl p-6 text-center my-6 relative overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" id="sort-story-num">Soal #1</span>
+                        <div class="mt-4 mb-2 text-indigo-900 font-heading text-xl md:text-2xl font-bold" id="sort-story-title">
+                            "Misteri Nyi Roro Kidul Penguasa Laut Selatan"
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto italic" id="sort-story-desc">
+                            "Masyarakat pesisir meyakini adanya sosok gaib penguasa laut selatan yang memiliki kekuatan mistis."
+                        </p>
+                    </div>
+
+                    <!-- Category Options Grid -->
+                    <p class="font-bold text-slate-700 text-center mb-3">Pilih Jenis Cerita Rakyat yang Tepat:</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3" id="sort-options">
+                        <!-- Dynamic buttons injected via JS -->
+                    </div>
+
+                    <div id="sort-feedback" class="mt-4 p-4 rounded-xl text-center hidden font-bold transition"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DETEKTIF CERITA RAKYAT (KUIS KACA) -->
+        <section id="sec-detektif" class="tab-content hidden">
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-slate-100">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
+                    <div>
+                        <h2 class="font-heading text-2xl font-bold text-slate-800">Misi Detektif Cerita Rakyat</h2>
+                        <p class="text-slate-500 text-sm">Analisis kisah singkat berikut dan jawab pertanyaan inferensial dengan cermat!</p>
+                    </div>
+                    <div class="bg-amber-100 text-amber-800 font-bold px-4 py-2 rounded-xl text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i> Skor Kuis: <span id="quiz-score">0</span>
+                    </div>
+                </div>
+
+                <div id="quiz-container">
+                    <!-- Dynamic Quiz Content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: KARTU MEMORI SASTRA -->
+        <section id="sec-memori" class="tab-content hidden">
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-slate-100">
+                <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
+                    <div>
+                        <h2 class="font-heading text-2xl font-bold text-slate-800">Kartu Memori Jenis Cerita</h2>
+                        <p class="text-slate-500 text-sm">Buka dua kartu untuk mencocokkan antara <b>Jenis Cerita Rakyat</b> dan <b>Pengertian/Contohnya</b>!</p>
+                    </div>
+                    <button onclick="initMemoryGame()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded-xl text-sm transition">
+                        <i class="fa-solid fa-rotate-right"></i> Acak Ulang
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 max-w-4xl mx-auto" id="memory-grid">
+                    <!-- Cards injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: LENCANA & PRESTASI -->
+        <section id="sec-prestasi" class="tab-content hidden">
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-slate-100">
+                <h2 class="font-heading text-2xl font-bold text-slate-800 mb-2">Papan Lencana Prestasi</h2>
+                <p class="text-slate-500 text-sm mb-6">Selesaikan berbagai tantangan untuk membuka lencana gelar Ahli Sastra Nusantara!</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="badges-grid">
+                    <!-- Badges injected via JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Rationale / Penjelasan -->
+    <div id="modal-explain" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 card-shadow animate-bounce-in">
+            <div class="flex justify-between items-start mb-3">
+                <div id="modal-icon" class="text-3xl"></div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <h3 id="modal-title" class="font-heading text-xl font-bold mb-2"></h3>
+            <p id="modal-body" class="text-slate-600 text-sm mb-6 leading-relaxed"></p>
+            <button onclick="closeModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-2xl transition">
+                Lanjutkan Petualangan <i class="fa-solid fa-arrow-right ml-1"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- DATA MATERI (7 Jenis Cerita Rakyat berdasarkan Buku Kelas 6) ---
+        const MATERI_DATA = [
+            {
+                id: 'mite',
+                name: 'Mite (Mitos)',
+                icon: 'fa-ghost',
+                color: 'from-purple-500 to-indigo-600',
+                bgColor: 'bg-purple-50 border-purple-200 text-purple-900',
+                desc: 'Cerita rakyat yang berhubungan dengan kepercayaan, benda gaib, atau hal-hal mistis dan dewa-dewi.',
+                examples: ['Nyi Roro Kidul', 'Dewi Sri Dewi Padi', 'Hikayat Sang Hyang Tunggal'],
+                keyTrait: 'Mengandung unsur mistis, gaib, atau kepercayaan adat.'
+            },
+            {
+                id: 'legenda',
+                name: 'Legenda',
+                icon: 'fa-mountain-sun',
+                color: 'from-emerald-500 to-teal-600',
+                bgColor: 'bg-emerald-50 border-emerald-200 text-emerald-900',
+                desc: 'Cerita rakyat yang mengisahkan asal-usul terjadinya suatu tempat, sungai, gunung, atau peristiwa alam.',
+                examples: ['Legenda Danau Toba', 'Sangkuriang (Tangkuban Perahu)', 'Batu Kuwung', 'Lembah Apapuhang'],
+                keyTrait: 'Menjelaskan asal nama atau terbentuknya suatu lokasi geografis.'
+            },
+            {
+                id: 'fabel',
+                name: 'Fabel',
+                icon: 'fa-paw',
+                color: 'from-amber-500 to-orange-600',
+                bgColor: 'bg-amber-50 border-amber-200 text-amber-900',
+                desc: 'Cerita rakyat dengan tokoh hewan yang dapat berbicara dan berperilaku layaknya manusia.',
+                examples: ['Kancil dan Harimau', 'Kancil dan Buaya', 'Kisah Cerdik Burung Gagak'],
+                keyTrait: 'Tokoh utamanya hewan yang bertindak seperti manusia.'
+            },
+            {
+                id: 'epos',
+                name: 'Epos (Kepahlawanan)',
+                icon: 'fa-shield-halved',
+                color: 'from-red-500 to-rose-600',
+                bgColor: 'bg-red-50 border-red-200 text-red-900',
+                desc: 'Cerita rakyat epik yang mengisahkan kepahlawanan, keberanian, dan perjuangan tokoh gagah berani.',
+                examples: ['Kisah Ramayana', 'Mahabharata', 'Gatotkaca'],
+                keyTrait: 'Fokus pada petualangan dan kepahlawanan tokoh utama.'
+            },
+            {
+                id: 'sage',
+                name: 'Sage',
+                icon: 'fa-landmark-flag',
+                color: 'from-blue-500 to-cyan-600',
+                bgColor: 'bg-blue-50 border-blue-200 text-blue-900',
+                desc: 'Cerita rakyat yang mengandung unsur sejarah kuno dan keperkasaan tokoh nyata di masa lalu.',
+                examples: ['Kisah Kerajaan Majapahit', 'Hikayat Hang Tuah', 'Ciung Wanara'],
+                keyTrait: 'Bercampur dengan catatan sejarah atau kerajaan tempo dulu.'
+            },
+            {
+                id: 'jenaka',
+                name: 'Cerita Jenaka',
+                icon: 'fa-face-laugh-squint',
+                color: 'from-yellow-400 to-amber-500',
+                bgColor: 'bg-yellow-50 border-yellow-200 text-yellow-900',
+                desc: 'Cerita rakyat humoris yang berisi konyol, kelakuan lucunya tokoh, dan mengundang gelak tawa.',
+                examples: ['Pak Pandir dari Jawa Barat', 'Pak Belalang', 'Si Lebai Malang'],
+                keyTrait: 'Mengandung unsur humor, kelakuan bodoh atau kecerdikan konyol.'
+            },
+            {
+                id: 'dongeng',
+                name: 'Dongeng',
+                icon: 'fa-wand-magic-sparkles',
+                color: 'from-pink-500 to-rose-500',
+                bgColor: 'bg-pink-50 border-pink-200 text-pink-900',
+                desc: 'Cerita rakyat fiktif/khayalan murni yang tidak benar-benar terjadi, disampaikan sekadar hiburan.',
+                examples: ['Si Kabayan', 'Timun Mas', 'Bawang Merah Bawang Putih'],
+                keyTrait: 'Cerita imajinatif hiburan dengan pesan kebaikan.'
+            }
+        ];
+
+        // --- GAME 1 DATA: TEBAK & KELOMPOKKAN ---
+        const SORT_QUESTIONS = [
+            { title: 'Asal Usul Danau Toba', desc: 'Kisah jelmaan ikan mas yang menjadi wanita cantik dan membentuk danau raksasa di Sumatra Utara.', answer: 'legenda' },
+            { title: 'Kancil Mencuri Timun', desc: 'Kisah hewan cerdik yang memperdaya Pak Tani demi mendapatkan makanan di ladang.', answer: 'fabel' },
+            { title: 'Nyi Roro Kidul Penguasa Laut Selatan', desc: 'Mitos masyarakat pesisir pantai selatan Jawa mengenai ratu gaib bergaun hijau.', answer: 'mite' },
+            { title: 'Kisah Pak Pandir', desc: 'Menceritakan laki-laki kocak yang selalu keliru memahami perintah istrinya sehingga bertindak lucu.', answer: 'jenaka' },
+            { title: 'Prabu Siliwangi & Kerajaan Pajajaran', desc: 'Kisah perjuangan raja termasyhur yang memimpin kerajaan besar di tanah Sunda.', answer: 'sage' },
+            { title: 'Kepahlawanan Ramayana', desc: 'Kisah perjuangan Rama dan Hanoman menyelamatkan Shinta dari ancaman Rahwana.', answer: 'epos' },
+            { title: 'Bawang Merah dan Bawang Putih', desc: 'Kisah fiktif kebaikan hati Bawang Putih menghadapi ibu tiri dan saudara tirinya.', answer: 'dongeng' },
+            { title: 'Terbentuknya Batu Kuwung', desc: 'Legenda asal-usul batu cekung berair panas di Banten.', answer: 'legenda' },
+            { title: 'Kisah Si Lebai Malang', desc: 'Kisah kocak seorang lebai yang bingung memilih dua pesta hingga akhirnya tidak dapat apa-apa.', answer: 'jenaka' },
+            { title: 'Suku Apapuhang Kurcaci Sangihe', desc: 'Cerita rakyat manusia bertubuh kecil di Kepulauan Sangihe yang berperang melawan laut.', answer: 'legenda' }
+        ];
+
+        // --- GAME 2 DATA: DETEKTIF CERITA ---
+        const DETEKTIF_QUESTIONS = [
+            {
+                story: 'Di sebuah lembah di kaki Gunung Awu, hiduplah suku Apapuhang yang bertubuh kecil seperti kurcaci. Mereka selalu bekerja keras, memakan kaki seribu, dan berniat membawa air laut yang asin ke puncak lembah dengan wadah keranjang rotan (Bika). Karena air selalu habis mengalir dari sela rotan, mereka marah dan mencacah air laut hingga terseret ombak.',
+                question: 'Berdasarkan cuplikan cerita rakyat "Lembah Apapuhang", apakah jenis cerita rakyat yang paling sesuai?',
+                options: [
+                    { text: 'Legenda (Asal-usul tempat/sejarah lokal)', isCorrect: true, rationale: 'Cerita Lembah Apapuhang mengisahkan asal-usul nama tempat seperti Sungai Saluu Apapuhang dan Liua Bale di Kepulauan Sangihe.' },
+                    { text: 'Fabel (Kisah Tokoh Hewan)', isCorrect: false, rationale: 'Tokoh utamanya adalah suku Apapuhang (manusia bertubuh kecil), bukan hewan.' },
+                    { text: 'Cerita Jenaka (Murni Humor)', isCorrect: false, rationale: 'Meskipun bertindak unik, cerita ini menjelaskan latar belakang geografis tempat di Sangihe.' },
+                    { text: 'Mite (Mitos Murni)', isCorrect: false, rationale: 'Cerita ini lebih menekankan asal-usul daerah geografis ketimbang ajaran gaib dewa.' }
+                ]
+            },
+            {
+                story: 'Pak Pandir diminta istrinya membeli garam ke pasar. Di jalan, ia melihat sungai jernih. Karena takut garamnya kotor terkena debu, Pak Pandir mencuci garam itu di dalam air sungai. Akibatnya, garam melarut habis dan Pak Pandir pulang membawa kantong kosong dengan wajah gembira.',
+                question: 'Apa jenis cerita rakyat di atas dan pesan moral yang terkandung di dalamnya?',
+                options: [
+                    { text: 'Cerita Jenaka; Jangan bertindak tanpa berpikir kritis', isCorrect: true, rationale: 'Pak Pandir adalah tokoh cerita jenaka. Pesannya adalah pentingnya menggunakan akal sehat sebelum melakukan sesuatu.' },
+                    { text: 'Sage; Kita harus menjaga kelestarian sungai', isCorrect: false, rationale: 'Kisah ini bukan sejarah kerajaan (sage), melainkan cerita humor konyol.' },
+                    { text: 'Epos; Kita harus rajin pergi ke pasar', isCorrect: false, rationale: 'Epos menceritakan kepahlawanan perang, bukan kekonyolan mencuci garam.' },
+                    { text: 'Fabel; Garam adalah benda ajaib', isCorrect: false, rationale: 'Tokohnya adalah manusia (Pak Pandir), bukan fabel hewan.' }
+                ]
+            },
+            {
+                story: 'Ketika pasukan Hanoman menggempur benteng Alengka, sang kera putih menunjukkan keberanian luar biasa. Dengan kesetiaannya kepada Prabu Rama, Hanoman menerobos kobaran api demi menyelamatkan Dewi Shinta dari cengkeraman Rahwana.',
+                question: 'Cerita di atas termasuk jenis cerita rakyat...',
+                options: [
+                    { text: 'Epos (Kepahlawanan & Perjuangan)', isCorrect: true, rationale: 'Kisah Ramayana merupakan epos kepahlawanan yang mengagungkan keberanian dan perjuangan tokohnya.' },
+                    { text: 'Dongeng hiburan biasa', isCorrect: false, rationale: 'Ramayana adalah epos/wiracarita epik kepahlawanan yang tersohor.' },
+                    { text: 'Cerita Jenaka', isCorrect: false, rationale: 'Cerita ini penuh perjuangan sengit, bukan cerita humor lucu.' },
+                    { text: 'Fabel binatang', isCorrect: false, rationale: 'Meski tokohnya Hanoman (kera), epos Ramayana berpusat pada kepahlawanan prajurit dalam wiracarita.' }
+                ]
+            }
+        ];
+
+        // --- STATE MANAGEMENT ---
+        let currentScore = 0;
+        let soundEnabled = true;
+        let currentSortIdx = 0;
+        let currentDetektifIdx = 0;
+        let memoryCards = [];
+        let memoryFlipped = [];
+        let memoryMatches = 0;
+        let unlockedBadges = new Set();
+
+        // --- AUDIO SYNTHESIZER (WEB AUDIO API) ---
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playSound(type) {
+            if (!soundEnabled) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                if (type === 'correct') {
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                    osc.frequency.exponentialRampToValueAtTime(659.25, audioCtx.currentTime + 0.15); // E5
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                } else if (type === 'wrong') {
+                    osc.frequency.setValueAtTime(220, audioCtx.currentTime); // A3
+                    osc.frequency.exponentialRampToValueAtTime(164.81, audioCtx.currentTime + 0.2); // E3
+                    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                } else if (type === 'click') {
+                    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.05);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.05);
+                }
+            } catch(e) {}
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('sound-icon').className = soundEnabled ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+        }
+
+        function addScore(pts) {
+            currentScore += pts;
+            document.getElementById('global-score').innerText = `${currentScore} Poin`;
+            checkBadges();
+        }
+
+        // --- TAB SWITCHING ---
+        function switchTab(tabId) {
+            playSound('click');
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-600', 'text-white', 'active-tab');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('bg-white', 'text-slate-700');
+            activeBtn.classList.add('bg-emerald-600', 'text-white', 'active-tab');
+
+            if (tabId === 'memori' && memoryCards.length === 0) {
+                initMemoryGame();
+            }
+        }
+
+        // --- RENDER MATERI CARDS ---
+        function renderMateri() {
+            const grid = document.getElementById('materi-grid');
+            grid.innerHTML = MATERI_DATA.map(m => `
+                <div class="bg-white rounded-3xl p-6 border border-slate-100 card-shadow hover:-translate-y-1.5 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr ${m.color} flex items-center justify-center text-white text-xl shadow-md">
+                                <i class="fa-solid ${m.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-slate-800">${m.name}</h3>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-semibold">Jenis Cerita</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">${m.desc}</p>
+                        
+                        <div class="p-3 rounded-xl ${m.bgColor} text-xs mb-4">
+                            <span class="font-bold block mb-1"><i class="fa-solid fa-key text-amber-500 mr-1"></i> Ciri Utama:</span>
+                            ${m.keyTrait}
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Contoh Cerita Popular:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            ${m.examples.map(ex => `<span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-lg font-medium border border-slate-200/60">${ex}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- GAME 1: TEBAK & KELOMPOKKAN LOGIC ---
+        function renderSortQuestion() {
+            if (currentSortIdx >= SORT_QUESTIONS.length) {
+                document.getElementById('sort-game-area').innerHTML = `
+                    <div class="text-center py-10">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-4xl mb-4">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-800 mb-2">Luar Biasa! Tantangan Selesai</h3>
+                        <p class="text-slate-600 mb-6">Kamu telah berhasil mengelompokkan seluruh cerita rakyat dengan baik!</p>
+                        <button onclick="resetSortGame()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-2xl shadow-md transition">
+                            Main Lagi
+                        </button>
+                    </div>
+                `;
+                addScore(50);
+                return;
+            }
+
+            const q = SORT_QUESTIONS[currentSortIdx];
+            document.getElementById('sort-story-num').innerText = `Soal #${currentSortIdx + 1} / ${SORT_QUESTIONS.length}`;
+            document.getElementById('sort-story-title').innerText = `"${q.title}"`;
+            document.getElementById('sort-story-desc').innerText = `"${q.desc}"`;
+            document.getElementById('sort-progress').innerText = `${currentSortIdx}/${SORT_QUESTIONS.length}`;
+            document.getElementById('sort-feedback').className = 'mt-4 p-4 rounded-xl text-center hidden font-bold transition';
+
+            const optsArea = document.getElementById('sort-options');
+            optsArea.innerHTML = MATERI_DATA.map(m => `
+                <button onclick="checkSortAnswer('${m.id}')" class="bg-white hover:bg-emerald-50 border-2 border-slate-200 hover:border-emerald-500 p-3 rounded-2xl font-bold text-slate-700 hover:text-emerald-700 transition flex flex-col items-center justify-center text-center gap-1 group">
+                    <i class="fa-solid ${m.icon} text-lg text-slate-400 group-hover:text-emerald-600"></i>
+                    <span class="text-xs md:text-sm">${m.name}</span>
+                </button>
+            `).join('');
+        }
+
+        function checkSortAnswer(selectedId) {
+            const q = SORT_QUESTIONS[currentSortIdx];
+            const fb = document.getElementById('sort-feedback');
+            fb.classList.remove('hidden');
+
+            if (selectedId === q.answer) {
+                playSound('correct');
+                addScore(10);
+                fb.className = "mt-4 p-4 rounded-xl text-center font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
+                fb.innerHTML = `<i class="fa-solid fa-circle-check text-xl mr-2"></i> Benar sekali! "${q.title}" termasuk jenis ${selectedId.toUpperCase()}.`;
+                setTimeout(() => {
+                    currentSortIdx++;
+                    renderSortQuestion();
+                }, 1200);
+            } else {
+                playSound('wrong');
+                fb.className = "mt-4 p-4 rounded-xl text-center font-bold bg-rose-100 text-rose-800 border border-rose-300";
+                fb.innerHTML = `<i class="fa-solid fa-circle-xmark text-xl mr-2"></i> Kurang tepat. Coba perhatikan kembali ciri-ciri cerita ini!`;
+            }
+        }
+
+        function resetSortGame() {
+            currentSortIdx = 0;
+            renderSortQuestion();
+        }
+
+        // --- GAME 2: DETEKTIF CERITA LOGIC ---
+        function renderDetektifQuiz() {
+            const container = document.getElementById('quiz-container');
+            if (currentDetektifIdx >= DETEKTIF_QUESTIONS.length) {
+                container.innerHTML = `
+                    <div class="text-center py-8">
+                        <i class="fa-solid fa-award text-5xl text-amber-400 mb-3"></i>
+                        <h3 class="font-heading text-2xl font-bold text-slate-800 mb-2">Seluruh Misi Detektif Tuntas!</h3>
+                        <p class="text-slate-600 mb-6">Kamu telah berhasil menganalisis seluruh teks cerita rakyat dengan cermat.</p>
+                        <button onclick="currentDetektifIdx=0; renderDetektifQuiz();" class="bg-indigo-600 text-white font-bold px-6 py-3 rounded-2xl shadow-md hover:bg-indigo-700 transition">
+                            Ulang Misi Detektif
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            const q = DETEKTIF_QUESTIONS[currentDetektifIdx];
+            container.innerHTML = `
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+                    <span class="text-xs font-bold bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">Kasus Detektif #${currentDetektifIdx + 1}</span>
+                    <p class="text-slate-700 text-sm md:text-base italic leading-relaxed bg-white p-4 rounded-xl border border-slate-200/80 mt-2">
+                        "${q.story}"
+                    </p>
+                </div>
+
+                <h4 class="font-bold text-slate-800 text-base md:text-lg mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-question text-indigo-600"></i> ${q.question}
+                </h4>
+
+                <div class="space-y-3">
+                    ${q.options.map((opt, idx) => `
+                        <button onclick="handleQuizAnswer(${idx})" class="w-full text-left p-4 rounded-2xl border-2 border-slate-200 hover:border-indigo-500 hover:bg-indigo-50/50 transition font-medium text-slate-700 flex items-start gap-3 group">
+                            <span class="w-7 h-7 rounded-full bg-slate-200 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center font-bold text-xs shrink-0 transition">
+                                ${String.fromCharCode(65 + idx)}
+                            </span>
+                            <span class="text-sm md:text-base pt-0.5">${opt.text}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function handleQuizAnswer(optIdx) {
+            const q = DETEKTIF_QUESTIONS[currentDetektifIdx];
+            const opt = q.options[optIdx];
+
+            if (opt.isCorrect) {
+                playSound('correct');
+                addScore(20);
+                showModal('<i class="fa-solid fa-circle-check text-emerald-500"></i>', 'Analisis Tepat, Detektif!', opt.rationale);
+            } else {
+                playSound('wrong');
+                showModal('<i class="fa-solid fa-triangle-exclamation text-amber-500"></i>', 'Perlu Dicermati Kembali', opt.rationale);
+            }
+
+            currentDetektifIdx++;
+            renderDetektifQuiz();
+        }
+
+        function showModal(iconHtml, title, body) {
+            document.getElementById('modal-icon').innerHTML = iconHtml;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-body').innerText = body;
+            document.getElementById('modal-explain').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-explain').classList.add('hidden');
+        }
+
+        // --- GAME 3: KARTU MEMORI SASTRA LOGIC ---
+        function initMemoryGame() {
+            memoryFlipped = [];
+            memoryMatches = 0;
+            
+            // Build pairs from 4 types
+            const selectedTypes = MATERI_DATA.slice(0, 6);
+            let cards = [];
+            selectedTypes.forEach(t => {
+                cards.push({ type: t.id, text: t.name, kind: 'title', icon: t.icon });
+                cards.push({ type: t.id, text: t.keyTrait, kind: 'trait', icon: t.icon });
+            });
+
+            // Shuffle
+            cards.sort(() => Math.random() - 0.5);
+            memoryCards = cards;
+
+            const grid = document.getElementById('memory-grid');
+            grid.innerHTML = cards.map((c, idx) => `
+                <div onclick="flipMemoryCard(${idx})" id="mem-card-${idx}" class="h-28 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl card-shadow cursor-pointer flex items-center justify-center p-2 text-center text-white transition transform active:scale-95">
+                    <i class="fa-solid fa-brain text-2xl opacity-70"></i>
+                </div>
+            `).join('');
+        }
+
+        function flipMemoryCard(idx) {
+            if (memoryFlipped.length >= 2 || memoryFlipped.includes(idx)) return;
+            
+            const card = memoryCards[idx];
+            const el = document.getElementById(`mem-card-${idx}`);
+            playSound('click');
+
+            el.className = "h-28 bg-white border-2 border-indigo-500 rounded-2xl card-shadow flex flex-col items-center justify-center p-2 text-center text-slate-800 text-xs font-bold transition transform scale-105";
+            el.innerHTML = `<i class="fa-solid ${card.icon} text-indigo-600 text-base mb-1"></i><span>${card.text}</span>`;
+            
+            memoryFlipped.push(idx);
+
+            if (memoryFlipped.length === 2) {
+                const idx1 = memoryFlipped[0];
+                const idx2 = memoryFlipped[1];
+                const c1 = memoryCards[idx1];
+                const c2 = memoryCards[idx2];
+
+                if (c1.type === c2.type && idx1 !== idx2) {
+                    playSound('correct');
+                    addScore(15);
+                    memoryMatches++;
+                    memoryFlipped = [];
+                    if (memoryMatches === 6) {
+                        setTimeout(() => alert('Selamat! Kamu berhasil mencocokkan semua Kartu Memori Cerita Rakyat!'), 300);
+                    }
+                } else {
+                    playSound('wrong');
+                    setTimeout(() => {
+                        [idx1, idx2].forEach(i => {
+                            const cardEl = document.getElementById(`mem-card-${i}`);
+                            cardEl.className = "h-28 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl card-shadow cursor-pointer flex items-center justify-center p-2 text-center text-white transition";
+                            cardEl.innerHTML = `<i class="fa-solid fa-brain text-2xl opacity-70"></i>`;
+                        });
+                        memoryFlipped = [];
+                    }, 1000);
+                }
+            }
+        }
+
+        // --- SECTION 5: BADGES SYSTEM ---
+        const BADGES = [
+            { id: 'b1', name: 'Penjelajah Sastra', req: 'Kumpulkan 30 Poin Pertama', icon: 'fa-compass', color: 'text-blue-500', minScore: 30 },
+            { id: 'b2', name: 'Pakar Jenis Cerita', req: 'Kumpulkan 80 Poin', icon: 'fa-scroll', color: 'text-amber-500', minScore: 80 },
+            { id: 'b3', name: 'Detektif Utama', req: 'Kumpulkan 150 Poin', icon: 'fa-magnifying-glass-location', color: 'text-emerald-500', minScore: 150 },
+            { id: 'b4', name: 'Master Folklor Nusantara', req: 'Kumpulkan 220 Poin', icon: 'fa-crown', color: 'text-purple-500', minScore: 220 }
+        ];
+
+        function checkBadges() {
+            BADGES.forEach(b => {
+                if (currentScore >= b.minScore) {
+                    unlockedBadges.add(b.id);
+                }
+            });
+            renderBadges();
+        }
+
+        function renderBadges() {
+            const grid = document.getElementById('badges-grid');
+            grid.innerHTML = BADGES.map(b => {
+                const isUnlocked = unlockedBadges.has(b.id);
+                return `
+                    <div class="p-5 rounded-3xl border ${isUnlocked ? 'bg-gradient-to-b from-amber-50 to-orange-50 border-amber-200' : 'bg-slate-50 border-slate-200 opacity-60'} text-center flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-2xl ${isUnlocked ? 'bg-amber-400 text-white shadow-lg shadow-amber-200' : 'bg-slate-200 text-slate-400'} flex items-center justify-center text-2xl mb-3">
+                            <i class="fa-solid ${b.icon}"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-base text-slate-800 mb-1">${b.name}</h4>
+                        <p class="text-xs text-slate-500 mb-3">${b.req}</p>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full ${isUnlocked ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-200 text-slate-600'}">
+                            ${isUnlocked ? 'Terbuka!' : 'Terkunci'}
+                        </span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // --- INIT APP ---
+        window.onload = () => {
+            renderMateri();
+            renderSortQuestion();
+            renderDetektifQuiz();
+            renderBadges();
+        };
+    </script>
+</body>
+</html>
